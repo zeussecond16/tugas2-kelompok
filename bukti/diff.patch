@@ -1,0 +1,32 @@
+--- a/app/src/main/java/com/example/uicompose/MainActivity.kt
++++ b/app/src/main/java/com/example/uicompose/MainActivity.kt
+@@ -48,9 +48,13 @@
+ private val BrandPurple = Color(0xFF6750A4)
+ private val BrandLavender = Color(0xFFEADDFF)
+ private val PageBackground = Color(0xFFF7F5FC)
+ private val Ink = Color(0xFF211A31)
+ private val MutedInk = Color(0xFF625D70)
++private val SoftGreen = Color(0xFFE0F2E8)
++private val SoftBlue = Color(0xFFE3EDFF)
++private val SoftOrange = Color(0xFFFFEAD5)
++private val SoftPink = Color(0xFFFCE4EC)
+
+@@ -179,4 +183,6 @@
+     val courses = listOf(
+         CourseData("Pemrograman Mobile", "Jetpack Compose dan Kotlin", "Pertemuan 5 · Layout Adaptif", 0.72f, Icons.Filled.School, BrandPurple, BrandLavender),
+         CourseData("Basis Data", "Normalisasi dan perancangan ERD", "Tugas dikumpulkan Jumat", 0.56f, Icons.Filled.Science, Color(0xFF24734A), SoftGreen),
++        CourseData("Struktur Data", "Array, list, dan pencarian", "Latihan mandiri", 0.84f, Icons.Filled.Code, Color(0xFF9A5700), SoftOrange),
++        CourseData("Analisis Data", "Statistik deskriptif", "Materi minggu ini", 0.41f, Icons.Filled.BarChart, Color(0xFF9A405D), SoftPink)
+     )
+
+@@ -187,1 +193,1 @@
+-        columns = GridCells.Adaptive(minSize = 160.dp),
++        columns = GridCells.Adaptive(minSize = 220.dp),
+
+@@ -308,3 +314,3 @@
+-                Column {
+-                    Text(course.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+-                    Text(course.subtitle, style = MaterialTheme.typography.bodySmall)
++                Column(modifier = Modifier.weight(1f)) {
++                    Text(course.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
++                    Text(course.subtitle, style = MaterialTheme.typography.bodySmall, color = MutedInk, maxLines = 2, overflow = TextOverflow.Ellipsis)
